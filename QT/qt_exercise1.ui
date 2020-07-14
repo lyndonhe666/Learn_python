@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>918</width>
-    <height>763</height>
+    <width>845</width>
+    <height>598</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -23,8 +23,14 @@
       <property name="sizePolicy">
        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
         <horstretch>4</horstretch>
-        <verstretch>4</verstretch>
+        <verstretch>1</verstretch>
        </sizepolicy>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>1000000</width>
+        <height>100</height>
+       </size>
       </property>
       <property name="title">
        <string>GroupBox</string>
@@ -38,6 +44,12 @@
        </property>
        <item>
         <layout class="QHBoxLayout" name="horizontalLayout" stretch="1,7,1">
+         <property name="spacing">
+          <number>-1</number>
+         </property>
+         <property name="sizeConstraint">
+          <enum>QLayout::SetNoConstraint</enum>
+         </property>
          <item>
           <widget class="QLabel" name="label">
            <property name="sizePolicy">
@@ -52,7 +64,7 @@
           </widget>
          </item>
          <item>
-          <widget class="QPlainTextEdit" name="plainTextEdit"/>
+          <widget class="QPlainTextEdit" name="population_number"/>
          </item>
          <item>
           <spacer name="horizontalSpacer">
@@ -79,7 +91,7 @@
           </widget>
          </item>
          <item>
-          <widget class="QPlainTextEdit" name="plainTextEdit_2"/>
+          <widget class="QPlainTextEdit" name="sample_number"/>
          </item>
          <item>
           <spacer name="horizontalSpacer_2">
@@ -104,26 +116,12 @@
       <property name="title">
        <string>GroupBox</string>
       </property>
-      <layout class="QHBoxLayout" name="horizontalLayout_3" stretch="8,1">
+      <layout class="QHBoxLayout" name="horizontalLayout_3" stretch="7,1">
        <property name="topMargin">
         <number>12</number>
        </property>
        <item>
-        <widget class="QScrollArea" name="scrollArea">
-         <property name="widgetResizable">
-          <bool>true</bool>
-         </property>
-         <widget class="QWidget" name="scrollAreaWidgetContents">
-          <property name="geometry">
-           <rect>
-            <x>0</x>
-            <y>0</y>
-            <width>757</width>
-            <height>555</height>
-           </rect>
-          </property>
-         </widget>
-        </widget>
+        <widget class="QTextEdit" name="textEdit"/>
        </item>
        <item>
         <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -167,7 +165,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>918</width>
+     <width>845</width>
      <height>22</height>
     </rect>
    </property>
