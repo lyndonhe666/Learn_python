@@ -24,6 +24,7 @@ class Sample():
         self.ui.chouyang.clicked.connect(self.get_sample)
         self.ui.baocun.clicked.connect(self.save_result)
         self.ui.tuichu.clicked.connect(self.exit)
+        self.ui.quanban.clicked.connect(self.show_all)
         
     def get_sample(self):
         # 抽样
@@ -43,8 +44,10 @@ class Sample():
         self.ui.textEdit.clear()
         self.ui.textEdit.setPlainText(self.data.to_string(index=False))
     
-    def exit(self):
-        self.ui.closeEvent()
+    @QtCore.Slot()
+    def exit(self,event):
+        print('退出')
+        app.quit()
 
 QtCore.QCoreApplication.setAttribute(QtCore.Qt.AA_ShareOpenGLContexts)
 app = QApplication([])
