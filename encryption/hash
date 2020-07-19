@@ -1,0 +1,21 @@
+import hashlib
+import os
+
+target_dir = '/Users/lyndon/Documents/白月黑羽python/yjyx/'
+src_dir = '/Users/lyndon/Documents/白月黑羽python/yjyx copy/'
+
+def get_hash(dir):
+    m = hashlib.md5()
+    for file_name in os.listdir(dir):
+        with open(dir+file_name, 'rb') as f:
+            contentBytes = f.read()
+            m.update(contentBytes)
+    return m.hexdigest()
+
+target_hashed = get_hash(target_dir)
+src_hashed = get_hash(src_dir)
+
+if target_hashed == src_hashed:
+    print('The files are the same')
+else:
+    print('Files have been modified')
