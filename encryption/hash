@@ -6,10 +6,12 @@ src_dir = '/Users/lyndon/Documents/白月黑羽python/yjyx copy/'
 
 def get_hash(dir):
     m = hashlib.md5()
-    for file_name in os.listdir(dir):
-        with open(dir+file_name, 'rb') as f:
-            contentBytes = f.read()
-            m.update(contentBytes)
+    for (dir_path, dir_names, file_names) in os.walk(dir):
+        for file_name in file_names:
+            fpath = os.path.join(dir_path, file_name)
+            with open(dir+file_name, 'rb') as f:
+                contentBytes = f.read()
+                m.update(contentBytes)
     return m.hexdigest()
 
 target_hashed = get_hash(target_dir)
