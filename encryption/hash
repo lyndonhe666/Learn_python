@@ -9,7 +9,8 @@ def get_hash(dir):
     for (dir_path, dir_names, file_names) in os.walk(dir):
         for file_name in file_names:
             fpath = os.path.join(dir_path, file_name)
-            with open(dir+file_name, 'rb') as f:
+            print(fpath)
+            with open(fpath, 'rb') as f:
                 contentBytes = f.read()
                 m.update(contentBytes)
     return m.hexdigest()
