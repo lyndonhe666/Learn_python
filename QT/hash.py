@@ -12,14 +12,9 @@ class MySignal(QObject):
 
 class FileCheck():
     def __init__(self):
-        ui_path = os.getcwd()
-        print(ui_path)
-        self.working_dir = QUiLoader().setWorkingDirectory(ui_path)
-        ui_path = os.getcwd()
-        print(ui_path)
-        print(self.working_dir)
+        # self.working_dir = QUiLoader().setWorkingDirectory(ui_path)
         self.ms = MySignal()
-        # self.ui = QUiLoader().load('hash_compare.ui')
+        self.ui = QUiLoader().load('QT/hash_compare.ui')
         self.ui.chooseSrcFile.clicked.connect(self.choose_src_file)
         self.ui.makeCheckFile.clicked.connect(self.make_check_file)
         self.ms.info_print.connect(self.print_to_displaybox)
